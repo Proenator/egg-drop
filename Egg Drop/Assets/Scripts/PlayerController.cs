@@ -8,8 +8,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate() //Use void FixedUpdate whenever Physics are used
     {
-        if (Input.GetButton("Horizontal")) //If the left or right key is held down
-            transform.Rotate(0, 0, RotationSpeed); //Rotate the player (Rotation Speed) degrees in the direction held down
+        if (Input.GetKey(KeyCode.LeftArrow)) //If the left key is held down
+            transform.Rotate(0, 0, RotationSpeed); //Rotate the player (Rotation Speed) degrees left
+        else if (Input.GetKey(KeyCode.RightArrow)) //Otherwise, if the right key is held down
+            transform.Rotate(0, 0, -(RotationSpeed)); //Rotate the player (Rotation Speed) degrees right
     }
 
 
